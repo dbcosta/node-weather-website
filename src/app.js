@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const hbs = require("hbs");
 const app = express();
+const port = process.env.PORT || 3001;
 const geocode = require("./utils/geocode");
 const forecast = require("./utils/forecast");
 
@@ -86,6 +87,6 @@ app.get("*", (req, res) => {
 });
 
 //listen is an asynchronous function.
-app.listen(3001, () => {
-  console.log("Server is up on port 3001.");
+app.listen(port, () => {
+  console.log("Server is up on port ", port);
 }); //will start up the express server
